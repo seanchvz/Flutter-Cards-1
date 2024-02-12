@@ -1,101 +1,88 @@
-  import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_constructors
 
-  void main() => runApp(
-    MaterialApp(
-      home: MainPage(),
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-    )
-  );
-  // ignore: use_key_in_widget_constructors
-  class MainPage extends StatelessWidget {
-    late Size screenSize; // for screen size compatibility
+import 'package:flutter/material.dart';
 
-    @override
-    Widget build(BuildContext context) {
-      screenSize = MediaQuery.of(context).size;
-      return Scaffold(
-    appBar: AppBar(
-      backgroundColor: Colors.green[100],
-      title: const Align(
-        alignment: Alignment.centerLeft,
-        child: Row(
-          children: [
-            Icon(Icons.food_bank), // 
-            SizedBox(width: 8), // 
-            Text("BURGER"),
-          ],
-        ),
-      ),
-    ),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-          Card(
-            child: Padding(
-              padding: EdgeInsets.all(1.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 400,
-                    height: double.infinity,
-                    child: Image.asset("assets/burger.jpeg"),
-                    decoration: BoxDecoration(
-          color: Colors.grey,
-          
+void main() => runApp(MaterialApp(
+  home:HomePagee(),
+  debugShowCheckedModeBanner: false,
+));
+
+class HomePagee extends StatelessWidget {
+  const HomePagee({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          Container(
+            height: 230,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(50),
+              ), // one side only for the border
+              color: Colors.blue[900],
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                  top: 50,
+                  left:0,
+                  child: Container( 
+                    height: 100,
+                    width: 300,
+                    decoration: BoxDecoration( // white thing sa loob
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(50),
+                        bottomRight: Radius.circular(50),
+                      )
                     ),
                   ),
-                  Expanded(
-                    child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            
-            const Text(
-              'Agriculture is good for both humans and animals', 
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10.0),
-            const Text('meow meow meow meow meow', style: TextStyle(fontSize: 15)),
-            const SizedBox(height: 10.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-            const Text('meow meow meow meow meow', style: TextStyle(fontSize: 15)),
-                
-                
-               
+                ),
+                Positioned(
+                  top: 90, // Position of the text
+                  left: 20,
+                  child: Text("Penguin", // text inside the widget
+                style: TextStyle(fontSize: 20,
+                color: Colors.blue[900]),
+                ),
+                ),
               ],
             ),
-          ],
+          ),
+          SizedBox(height: 100,),
+          Container(
+            height: 200,
+            child: Stack(
+              children: [
+                Positioned(
+                  top: 10,
+                  left: 20,
+                  child: Material(
+
+                  child:Container(
+                    height: 180,
+                    width: 200,// 90 percent of the screen
+                    decoration: BoxDecoration( 
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(0.0)
                     ),
+                  // Content
                   ),
-          
-                  Padding(
-                    padding:EdgeInsets.all(16.0),
-                    child: Container(
-          color: Colors.black,
-          height: 10,
-          width: 10,
-                  ),
-                  )
-                ],
-              ),
+                  ))
+                  // Positioned(child: 
+                  // Card(
+                  //   elevation:10.0
+                  //   shape: RoundedRectangleBorder,
+                  //   ))
+              ],
             ),
-          ),
-          
-          
-          
-            ],
-          ),
-        ),
+          )
+
+        ],
+      ),
     );
   }
 }
