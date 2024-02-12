@@ -61,8 +61,7 @@ class HomePagee extends StatelessWidget {
                   top: 10,
                   left: 20,
                   child: Material(
-
-                  child:Container(
+                    child:Container(
                     height: 180,
                     width: 200,// 90 percent of the screen
                     decoration: BoxDecoration( 
@@ -72,11 +71,27 @@ class HomePagee extends StatelessWidget {
                   // Content
                   ),
                   ))
-                  // Positioned(child: 
-                  // Card(
-                  //   elevation:10.0
-                  //   shape: RoundedRectangleBorder,
-                  //   ))
+                  
+                // Positioned(
+                //     top:0,
+                //     left: 30,
+                //     child: Card(
+                //       elevation:10.0
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(15.0),
+                //         ),
+                //         child: Container(
+                //           height: 200,
+                //           width: 150,
+                //           decoration: BoxDecoration(
+                //             border: BorderRadius.circular(10.0),
+                //             image: DecorationImage(image: 
+                //               fit:BoxFit.fill,
+                //               image: AssetImage(image:"burger.jpeg"),
+                //             ),
+                //           ),
+                //         )
+                //     ))
               ],
             ),
           )
